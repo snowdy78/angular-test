@@ -1,0 +1,25 @@
+
+<div>
+    <mat-form-field class="example-ripple-form-field">
+    	<mat-label>Radius</mat-label>
+    	<input matInput [(ngModel)]="radius" type="number">
+    </mat-form-field>
+</div>
+<div>
+	<mat-grid-list cols="4" rowHeight="100px">
+		<mat-grid-tile
+			*ngFor="let tile of tiles"
+			[colspan]="tile.cols"
+			[rowspan]="tile.rows"
+			[style.background]="tile.color">
+			<button class="marg_right" mat-raised-button>Basic</button>
+			<button class="marg_right" mat-raised-button color="primary">Primary</button>
+			<button *ngIf="!hide" mat-raised-button color="accent">Accent</button>
+			<button mat-raised-button color="warn">Warn</button>
+		</mat-grid-tile>
+	  </mat-grid-list>
+</div>
+<mat-list *ngFor="let item of items" class="items">
+	<mat-list-item>{{item.self_id}}</mat-list-item>
+	<mat-divider></mat-divider>
+</mat-list>
